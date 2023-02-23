@@ -49,9 +49,7 @@ export class App extends Component {
       return {
         contacts: contacts.filter(contact => contact.id !== id),
       };
-    }); 
-    
-    
+    });
   };
 
   render() {
