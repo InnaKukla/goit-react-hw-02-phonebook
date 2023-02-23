@@ -39,7 +39,6 @@ export class App extends Component {
   };
 
   filterContacts = e => {
-    console.log(e.target);
     this.setState({
       filter: e.target.value,
     });
@@ -50,7 +49,9 @@ export class App extends Component {
       return {
         contacts: contacts.filter(contact => contact.id !== id),
       };
-    });
+    }); 
+    
+    
   };
 
   render() {
@@ -75,7 +76,6 @@ export class App extends Component {
         <h2>Contacts</h2>
         <FilterContacts filterContacts={this.filterContacts} />
         <ContactsList
-          id={nanoid()}
           onDeleteHandler={this.onDeleteHandler}
           contacts={visibleContacts}
         />
