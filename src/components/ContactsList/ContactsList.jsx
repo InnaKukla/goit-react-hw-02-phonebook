@@ -1,23 +1,23 @@
 import { PhoneContacts } from './ContactsList.styled';
 import PropTypes from 'prop-types';
 
-export const ContactsList = ({contacts, onDeleteHandler }) => {
-  
+export const ContactsList = ({ contacts, onDeleteHandler }) => {
   return (
     <PhoneContacts>
-      {contacts.map(({id, name, number}) => {
+      {contacts.map(({ id, name, number }) => {
         return (
-        <li key={id}>
-          {name}: {number}
-          <button
-            onClick={() => {
-              onDeleteHandler(id);
-            }}
-          >
-            Delete
-          </button>
-        </li>
-      )})}
+          <li key={id}>
+            {name}: {number}
+            <button
+              onClick={() => {
+                onDeleteHandler(id);
+              }}
+            >
+              Delete
+            </button>
+          </li>
+        );
+      })}
     </PhoneContacts>
   );
 };
